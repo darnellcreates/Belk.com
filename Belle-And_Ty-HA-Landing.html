@@ -1,0 +1,311 @@
+<script type="text/javascript" src="http://www.belk.com/media/javascript/libs/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://www.belk.com/media/javascript/ui/slidedeck.jquery.js"></script>
+
+<div class="mw_hide">
+
+<style>
+ 
+#horizontal-template-wrap               {
+	position: relative;
+	min-width: 710px;
+	width: 770px; 
+	float: left;
+	font-family: arial, sans-serif;
+}
+.horizontal-template-row                { position: relative; margin-bottom: 20px; min-width: 710px; width: 770px; }
+.horizontal-template-rowlast            { position: relative; margin-bottom: 20px; min-width: 710px; max-width: 730px; }
+.horizontal-template-row.first          { margin-bottom: 10px }
+.horizontal-template-row.title          { position: relative; overflow: hidden; width: 710px; height: 30px; margin-bottom: 10px; }
+.horizontal-template-row.brands         { margin-bottom: 0; }
+.horizontal-template-row a>img          { display: block; width: 100%; height: 100%; }
+.horizontal-template-row #banner-top    { position: relative; overflow: hidden; width: 708px; height: 48px; border: 1px solid #eee; }
+.horizontal-template-row #horizontal-hero
+                                        {
+	position: relative;
+	overflow: hidden; 
+	width: 750px;
+	height: 500px;
+	padding-bottom: 0;
+	
+}
+.horizontal-template-row .promo         { position: relative; overflow: hidden; float: left; width: 243px; height: 300px; border: 1px solid #eee; }
+.horizontal-template-row .promo.mid     { margin: 0px 7px ;}
+.horizontal-template-rowlast .promo     { position: relative; overflow: hidden; float: left; width: 230px; height: 222px; border: 1px solid #eee; }
+.horizontal-template-rowlast .promo.mid { margin: 0px 7px; }
+.horizontal-template-row .horizontal-block
+                                        { float: left ;}
+.horizontal-template-rowlast.horizontal-block
+                                        { float: left ;}
+.horizontal-template-row .feature       { position: relative; overflow: hidden; float: left; width: 367px; height: 264px; border: 1px solid #eee; }
+.horizontal-template-row .brand         { position: relative; overflow: hidden; float: left; width: 170px; height: 90px; margin-left: 10px; }
+.horizontal-template-row .brand.first   { margin-left: 0; }
+.horizontal-template-row .recommend.first
+                                        { margin-left: 0 ;}
+.horizontal-template-row .recommend     { position: relative; overflow: hidden; float: left; width: 170px; min-height: 350px; margin-left: 10px; }
+.horizontal-template-row .recommend .rec-info a
+                                        { font-size: 14px; color: #003ba2; font-weight: normal; text-decoration: underline; }
+.horizontal-template-row .rec-clip      { overflow: hidden; width: 168px; height: 248px; margin-bottom: 10px; border: 1px solid #eee; }
+.horizontal-template-row .product-price { font-size: 14px; padding-top: 10px; color: #333; }
+.horizontal-template-row .more-colors   { font-size: 10px; padding-bottom: 10px; color: #ff8c37; font-weight: bold; text-transform: uppercase; }
+.horizontal-template-row .mid           { margin: 0px 5px 0px 7px ;}
+.cta-area                               {opacity: 0.7; background: none repeat scroll 0 0 #FFFFFF; position: absolute; z-index: 9999; left: 0; bottom: 0; height: 50px; width: 100%; text-align: center; font-family: arial, sans-serif; font-size: 16px; letter-spacing: .6px; line-height: 1em; }
+.cta-area-banner                        { position: absolute; bottom: 0; right: 0; width: 230px; height: 50px; text-align: center; font-family: arial, sans-serif; font-size: 16px; }
+.cta-area ul, .cta-area-banner ul       { list-style: none; padding: 0; margin: 0; padding-top: 17px; }
+.cta-area li, .cta-area-banner li       { display: inline-block; *zoom: 1; *display: inline; }
+.cta-area li.cta, .cta-area-banner li.cta
+                                        { border-left: 2px solid; padding-left: 10px; margin-left: 10px;  }
+.cta-area li.cta a, .cta-area-banner li.cta a
+                                        { text-decoration: none!important; padding: 10px 0; }
+.cta-area li.cta1, .cta-area-banner li.cta1
+                                        { border-left: 0; padding-left: 0; margin-left: 0; }
+.cf:before, .cf:after                   { content: " "; display: block; }
+.cf:after                               { clear: both; }
+.cf                                     { *zoom: 1; }                                 { *zoom: 1 ; }
+/* ***********Set CTA Text Color************
+   ==================================================
+   ================================================== */
+/* BANNER
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #banner-top .cta-area-banner, #horizontal-template-wrap .horizontal-template-row #banner-top .cta-area-banner a
+                                        { color: #3D8E33;  text-decoration: none;}
+/* HERO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #horizontal-hero .cta-area, #horizontal-template-wrap .horizontal-template-row #horizontal-hero .cta-area a
+                                        {
+	color: #377FAC;
+}
+/* PROMO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .promo .cta-area, #horizontal-template-wrap .horizontal-template-row .promo .cta-area a
+                                        {background: white;
+										opacity: .9;
+											 color: #377FAC; }
+          
+/* FEATURE
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .feature .cta-area, #horizontal-template-wrap .horizontal-template-row .feature .cta-area a
+                                        {background: white;
+										opacity: .9; 
+										color: #377FAC; }
+
+  /* Last Row  
+   ==================================================
+   ================================================== */ 
+ #horizontal-template-wrap .horizontal-template-row .promo .cta-area, #horizontal-template-wrap .horizontal-template-rowlast .promo .cta-area a
+                                        {background: white;
+										opacity: .9; 
+										color: #377FAC; }    
+                                                                 
+/* ***********Set CTA Background Color************
+   ==================================================
+   ================================================== */
+/* BANNER
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #banner-top .cta-area-banner
+                                        { background: white;
+										opacity: .9;
+									 } 
+/* HERO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #horizontal-hero .cta-area
+                                        {  background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9;} 
+/* PROMO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .promo .cta-area
+                                        {background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9;}
+
+ #horizontal-template-wrap .horizontal-template-rowlast .promo .cta-area
+                                        { background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9;}                                       
+/* FEATURE
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .feature .cta-area
+                                        { background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9; }
+
+#slidedeck_frame { position: relative; width: 750px; height:500px; margin:0 auto; }
+
+.slidedeck { height: 500px; width: 750px; padding-bottom: 10px; margin: 0; }
+
+#slidedeck_frame .prev { position: absolute; left: 0px; top:200px; background: url('http://s7d4.scene7.com/is/image/Belk/wk33_shoetrends_slider_navleft?&$P_CONTENT_PNG$') no-repeat; z-index: 3; height: 101px; width: 35px; cursor: pointer; }
+
+#slidedeck_frame .next {
+	position: absolute;
+	right: 0px;
+	top: 201px;
+	background: url('http://s7d4.scene7.com/is/image/Belk/wk33_shoetrends_slider_navright?&$P_CONTENT_PNG$') no-repeat;
+	z-index: 3;
+	height: 101px;
+	width: 35px;
+	cursor: pointer;
+}
+
+</style>
+
+<div class="mw_hide">  
+ <div id="horizontal-template-wrap">
+ 
+ <!-- PAGE START -->
+ 
+  <!-- ********************* -->
+  <!--          Hero         -->
+  <!-- ********************* -->
+  <div class="horizontal-template-row cf">
+    <div id="horizontal-hero">  
+     
+<div id="slidedeck_frame"> 
+          <dl class="slidedeck">
+          
+<dd><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_heroslide1_051514?&$P_CONTENT$" usemap="#Map"  border="0" />
+
+  <map name="Map" id="Map">
+    <area shape="rect" coords="625,448,674,475" href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle.jsp" manual_cm_re="BrandShop-_-Hero-_-1_051514_BelleAndTyHandbags_And_AccessoriesPageBELLE"  alt="Belle" />
+    <area shape="rect" coords="680,448,703,474" href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Ty.jsp"  manual_cm_re="BrandShop-_-Hero-_-2_051514_BelleAndTyHandbags_And_AccessoriesPageTY"  alt="Ty" />
+  </map>
+</dd>
+
+	<dd><a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle.jsp"  manual_cm_re="BrandShop-_-Hero-_-3_051514_BelleAndTyHandbags_And_AccessoriesPageBELLESLIDE2"><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_heroslide2_051514?&$P_CONTENT$"  border="0" /></a></dd>
+	<dd><a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Ty.jsp"  manual_cm_re="BrandShop-_-Hero-_-4_051514_BelleAndTyHandbags_And_AccessoriesPageTYSLIDE2"><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_heroslide3_051514?&$P_CONTENT$" border="0"/></a></dd>
+</dl>
+<div class="prev"></div><!--.prev-->
+          <div class="next"></div><!--.next-->          
+          
+    </div><!--#slidedeck_frame-->
+  </div><!--#expandable-container-->
+
+
+<script>
+
+
+
+</script>
+
+
+    <!-- CTA -->
+    </div>
+   </div>
+ 
+ <!-- P1, P2 and P3 Wrapper Start -->
+  <div class="horizontal-template-row cf">  
+    <!-- ********************* -->
+    <!--           P1          -->
+    <!-- ********************* -->
+    <div class="promo">
+      <!-- Image -->
+      <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/Handbags.jsp" manual_cm_re="BrandShop-_-P1-_-Image_051514_BelleAndTyHandbags_And_AccessoriesBelleShoes" ><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_p1_051514?&$P_CONTENT$" alt="" title="" /></a>
+      <!-- CTA -->
+      <div class="cta-area">
+        <ul>
+          <!-- <li>shop:</li> -->
+          <li class="cta cta1">
+            <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/Handbags.jsp" manual_cm_re="BrandShop-_-P1-_-1_051514_BelleAndTyHandbags_And_AccessoriesBelleShoes" >
+              shop handbags
+            </a>
+          </li>
+        </ul>
+      </div>     
+    </div>
+    <!-- ********************* -->
+    <!--           P2          -->
+    <!-- ********************* -->
+    <div class="promo mid">
+      <!-- Image -->
+      <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/Shoes.jsp" manual_cm_re="BrandShop-_-P2-_-Image_051514_BelleAndTyHandbags_And_AccessoriesItsAboutSetppingOutOnYourOwn" ><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_p2_051514?&$P_CONTENT$" alt="" title="" /></a>
+      <!-- CTA -->
+      <div class="cta-area">
+        <ul>
+          <!-- <li>shop:</li> -->
+          <li class="cta cta1">
+            <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/Shoes.jsp" manual_cm_re="BrandShop-_-P2-_-1_051514_BelleAndTyHandbags_And_AccessoriesItsAboutSetppingOutOnYourOwn" >
+             shop shoes</a>
+          </li>
+        </ul>       
+      </div>     
+    </div>
+    <!-- ********************* -->
+    <!--           P3          -->
+    <!-- ********************* -->
+    <div class="promo">
+      <!-- Image -->
+      <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/Accessories.jsp" manual_cm_re="BrandShop-_-P3-_-Image_051514_BelleAndTyHandbags_And_AccessoriesItsAboutTheRightFinishingTouch" ><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_p3_051514?&$P_CONTENT$" alt="" title="" /></a>
+      <!-- CTA -->
+      <div class="cta-area">
+        <ul>
+          <!-- <li>shop:</li> -->
+          <li class="cta cta1">
+            <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/Accessories.jsp" manual_cm_re="BrandShop-_-P3-_-Image_051514_BelleAndTyHandbags_And_AccessoriesItsAboutTheRightFinishingTouch" >
+              shop accessories
+            </a>
+          </li> 
+        </ul>
+      </div>         
+    </div>
+</div> <!-- P1, P2 and P3 Wrapper Start -->
+<!--____________________________________________________________________-->
+<!--                                                                    -->
+<!--                              FEATURES                              -->
+<!--____________________________________________________________________-->
+
+  <!-- Features Wrapper Start --><div class="horizontal-template-row cf">
+    <div class="feature"> <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Belle/BellesPicks.jsp" manual_cm_re="BrandShop-_-P4-_-Image_051514_BelleAndTyHandbags_And_AccessoriesPrintPatternsAndColorAreMyJamBelle"><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_p4_051514?&$P_CONTENT$" alt="" title=""/></a> </div>
+    <div class="feature mid">
+      <a href="/AST/Main/Belk_Primary/Handbags_And_Accessories/Featured_Shop/BelleTy/Ty/TysPicks.jsp" manual_cm_re="BrandShop-_-P5-_-1_051514_BelleAndTyHandbags_And_AccessoriesICanRockABowTieAndSeerSuckerLikeNobdysBusinessTy"><img src="http://s7d4.scene7.com/is/image/Belk/wk15_bellety_p5_051514?&$P_CONTENT$" alt="Print, patterns &amp; color are my jam! -- Belle" title=""/></a>
+        
+    </div>
+  </div>
+  </div>
+
+
+<script type ="text/javascript">
+            
+/*******************SLIDEDECK SCRIPT ***********************/
+$(document).ready(function(){
+
+   $('.slidedeck').slidedeck({
+        hideSpines:true
+    });
+
+    var sd = $('.slidedeck').slidedeck();
+    //CHANGE BEGINNING SLIDE HERE
+        sd.goTo(1);
+    //CHANGE BEGINNING SLIDE HERE
+
+    $('#slidedeck_frame .next').click(function(){
+            sd.next();
+    });
+    $('#slidedeck_frame .prev').click(function(e){
+            sd.prev();       
+    }); 
+
+ $('#expand-collapse').click(function(e) {
+   e.preventDefault();
+   if ( $('#expandable-container').css('display') == 'none'  ) {
+     $('#expand-collapse').text('X Close');
+   } else {
+     $('#expand-collapse').html('Expand &rsaquo;');
+     //CHANGE BEGINNING SLIDE HERE
+         sd.goTo(1); 
+     //CHANGE BEGINNING SLIDE HERE     
+   }     
+   $('#expandable-container').slideToggle();       
+ });
+
+});  
+
+</script>
+
+     </div>

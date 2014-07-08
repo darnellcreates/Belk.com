@@ -1,0 +1,99 @@
+<script type="text/javascript" src="http://www.belk.com/media/javascript/libs/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://www.belk.com/media/javascript/ui/slidedeck.jquery.js"></script>
+
+<style>  
+  
+#slidedeck_frame { position: relative; width: 770px; height:400px; margin:0; padding:0; }
+
+.slidedeck { height: 440px; width: 770px; padding-bottom: 15px; }
+   
+ 
+#sd_controls {
+-webkit-border-top-left-radius: 35px;
+-moz-border-radius-topleft: 35px;
+border-top-left-radius: 35px;  
+width:770px; 
+/* THIS IS WHERE THE LOGO GOES */
+background-color: #BBDBF2;
+background-image: url('http://belk.scene7.com/is/image/Belk/wk52_windowtreatments_logo?&amp;$P_CONTENT$');
+background-repeat:no-repeat;
+background-position: -5px 6px;
+}  
+	    
+#sd_controls ul { 
+list-style: none; 
+display: block;   
+text-align: right;
+padding-top: 8px; 
+-webkit-border-top-left-radius: 35px;
+-moz-border-radius-topleft: 35px;
+border-top-left-radius: 35px; 
+/*
+background-image: url('http://belk.scene7.com/is/image/Belk/WindowsTreatmentNav_Sprite-1?&amp;$P_CONTENT$'); 
+*/
+}
+  
+#sd_controls ul li { 
+display: inline-block; 
+/** IE7 Doesn't Understand "Inline-Block", so here's a work-around  **/
+zoom: 1;
+*display: inline; 
+
+/** END IE7 Hack **/ 
+font-size: 16px; 
+background: #DAEBFB;  
+cursor: pointer; 
+padding: 11px; 
+-webkit-border-top-left-radius: 15px;
+-moz-border-radius-topleft: 15px; 
+font-family: 'Roboto Condensed', sans-serif;
+border-top-left-radius: 15px; 
+color: #235789;  
+} 
+
+#sd_controls ul li.current { background: white; }
+/*End SlideDeck Styles*/
+
+#sd_controls ul li:hover{ 
+background:	#009FDE;
+color: white;
+} 
+
+</style> 
+
+    <div class="skin-slidedeck" id="slidedeck_frame">
+     <div id="sd_controls">
+            <ul>
+                
+                <li class="current">measuring</li>
+                <li>curtains &amp; drapes</li>
+                <li>valances</li>
+                <li>blackout curtains</li>
+                <li>fabrics</li>
+                <li>hardware</li>
+            </ul>   
+      </div><!--#sd_controls--> 
+           
+        <dl class="slidedeck" style="height: 440px; position: relative; overflow: hidden;">
+            <dd class="active slide slide_1" style="display: block; transform-origin: 50% 50% 0px; left: 0px; z-index: 1; position: absolute; height: 440px; width: 770px; margin: 0px; padding-left: 0px;"><a manual_cm_sp="BrandShop-_-Banner-_-1_012814_Trend_Slide1HowToMeasureYourWindows_ShopWindowsTreatment" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments.jsp"><img border="0" src="http://belk.scene7.com/is/image/Belk/wk52_wt101_slide1?&amp;$P_CONTENT$"></a></dd>
+            <dd style="display: block; transform-origin: 50% 50% 0px; left: 770px; z-index: 1; position: absolute; height: 440px; width: 770px; margin: 0px; padding-left: 0px;" class="slide slide_2"><a manual_cm_sp="BrandShop-_-Banner-_-2_012814_Trend_Slide2TransformYourRoomWithCurtainsAndDrapes_ShopCurtainsAndDrapes" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/CurtainsDrapes.jsp"><img border="0" src="http://belk.scene7.com/is/image/Belk/wk52_wt101_slide2?&amp;$P_CONTENT$"></a></dd>
+            <dd style="display: block; transform-origin: 50% 50% 0px; left: 1540px; z-index: 1; position: absolute; height: 440px; width: 770px; margin: 0px; padding-left: 0px;" class="slide slide_3"><a manual_cm_sp="BrandShop-_-Banner-_-3_012814_Trend_Slide3AddDetailWithValences_ShopValences" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/Valances.jsp"><img border="0" src="http://belk.scene7.com/is/image/Belk/wk52_wt101_slide3?&amp;$P_CONTENT$"></a></dd> 
+            <dd style="display: block; transform-origin: 50% 50% 0px; left: 2310px; z-index: 1; position: absolute; height: 440px; width: 770px; margin: 0px; padding-left: 0px;" class="slide slide_4"><a manual_cm_sp="BrandShop-_-Banner-_-4_012814_Trend_BlackoutLightAndConserveEnergy_ShopBlackoutCurtains" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/CurtainsDrapes/Blackout.jsp"><img border="0" src="http://belk.scene7.com/is/image/Belk/wk52_wt101_slide4?&amp;$P_CONTENT$"></a></dd>
+            <dd style="display: block; transform-origin: 50% 50% 0px; left: 3080px; z-index: 1; position: absolute; height: 440px; width: 770px; margin: 0px; padding-left: 0px;" class="slide slide_5"><img border="0" usemap="#FabricsPage" src="http://belk.scene7.com/is/image/Belk/wk52_wt101_slide5?&amp;$P_CONTENT$"></dd>
+            <dd style="display: block; transform-origin: 50% 50% 0px; left: 3850px; z-index: 1; position: absolute; height: 440px; width: 770px; margin: 0px; padding-left: 0px;" class="slide slide_6 last"><a manual_cm_sp="BrandShop-_-Banner-_-6_012814_Trend_Slide6DontForgetTheHardware_ShopHardware" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/HardwareAccessories.jsp"><img border="0" src="http://belk.scene7.com/is/image/Belk/wk52_wt101_slide6?&amp;$P_CONTENT$"></a></dd>
+        </dl>
+       
+
+
+<map name="FabricsPage">
+ <area manual_cm_sp="BrandShop-_-Banner-_-5_012814_Trend_Slide5PersonalizeYourWindows_ShopSolids" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/CurtainsDrapes/Solid.jsp" coords="22,59,182,358" shape="rect">
+  <area manual_cm_sp="BrandShop-_-Banner-_-5_012814_Trend_Slide5PersonalizeYourWindows_ShopPatterned" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/CurtainsDrapes/Patterned.jsp" coords="209,57,369,356" shape="rect">
+   <area manual_cm_sp="BrandShop-_-Banner-_-5_012814_Trend_Slide5PersonalizeYourWindows_ShopSheer" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/CurtainsDrapes/Sheer.jsp" coords="403,55,563,354" shape="rect">
+   <area manual_cm_sp="BrandShop-_-Banner-_-6_012814_Trend_Slide5PersonalizeYourWindows_ShopKids" href="/AST/Main/Belk_Primary/For_the_Home/Shop/WindowTreatments/CurtainsDrapes/Kids.jsp" coords="590,54,750,353" shape="rect">
+     
+</map>
+
+    </div>
+
+
+ 

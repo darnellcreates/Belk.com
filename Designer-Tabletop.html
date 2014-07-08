@@ -1,0 +1,360 @@
+<script type="text/javascript" src="http://www.belk.com/media/javascript/libs/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://www.belk.com/media/javascript/ui/jquery.cross-slide.js"></script>
+<script type="text/javascript" src="http://www.belk.com/media/javascript/jquery.easing.1.3.js"></script>
+
+<script>
+   // Preload images >>>also add image links for slider here
+   $(document).ready(function() {
+    var imgs = [], imgUrls =
+    [
+'http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide1?&$P_CONTENT$',
+'http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide2?&$P_CONTENT$' ,
+'http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide3?&$P_CONTENT$',
+    ];
+
+    var imgs = []
+
+    for(url in imgUrls) {
+     i = new Image();
+     i.src = imgUrls[url];
+     imgs.push(i);
+    }
+
+   });
+</script>  
+
+<style>
+
+ #imagewrap{
+            position: relative;
+            width:700px;
+            height: 500px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        
+        .imageframe{
+            width:700px;
+            height: 500px;
+            position: absolute;
+            z-index:10;
+		}
+       
+        .image{
+           position: absolute;
+           top:0;
+           right: 300;
+        } 
+		
+	    
+		/*Set dimensions on wrap and imgs*/
+#kb-wrap {   position: relative;
+            width:709px;
+            height:500px; 
+            margin:0 auto;
+            overflow: hidden; }    
+			 
+
+ 
+#horizontal-template-wrap               {
+	position: relative;
+	min-width: 710px;
+	max-width: 730px;
+	padding: 0 0 30px 40px; 
+	float: left;
+	font-family: arial,  
+                                          sans-serif;
+}
+.horizontal-template-row                { position: relative; margin-bottom: 20px; min-width: 710px; max-width: 730px; }
+.horizontal-template-rowlast            { position: relative; margin-bottom: 20px; min-width: 710px; max-width: 730px; }
+.horizontal-template-row.first          { margin-bottom: 10px }
+.horizontal-template-row.title          { position: relative; overflow: hidden; width: 710px; height: 30px; margin-bottom: 10px; }
+.horizontal-template-row.brands         { margin-bottom: 0; }
+.horizontal-template-row a>img          { display: block; width: 100%; height: 100%; }
+.horizontal-template-row #banner-top    { position: relative; overflow: hidden; width: 708px; height: 48px; border: 1px solid #eee; }
+.horizontal-template-row #horizontal-hero
+                                        {
+	position: relative;
+	overflow: hidden; 
+	width: 709px;
+	height: 500px;
+	padding-bottom: 0;
+	
+}
+.horizontal-template-row .promo         { position: relative; overflow: hidden; float: left; width: 230px; height: 278px; border: 1px solid #eee; }
+.horizontal-template-row .promo.mid     { margin: 0px 7px ;}
+.horizontal-template-rowlast .promo     { position: relative; overflow: hidden; float: left; width: 230px; height: 222px; border: 1px solid #eee; }
+.horizontal-template-rowlast .promo.mid { margin: 0px 7px; }
+.horizontal-template-row .horizontal-block
+                                        { float: left ;}
+.horizontal-template-rowlast.horizontal-block
+                                        { float: left ;}
+.horizontal-template-row .feature       { position: relative; overflow: hidden; float: left; width: 350px; height: 277px; border: 1px solid #eee; }
+.horizontal-template-row .brand         { position: relative; overflow: hidden; float: left; width: 170px; height: 90px; margin-left: 10px; }
+.horizontal-template-row .brand.first   { margin-left: 0; }
+.horizontal-template-row .recommend.first
+                                        { margin-left: 0 ;}
+.horizontal-template-row .recommend     { position: relative; overflow: hidden; float: left; width: 170px; min-height: 350px; margin-left: 10px; }
+.horizontal-template-row .recommend .rec-info a
+                                        { font-size: 14px; color: #003ba2; font-weight: normal; text-decoration: underline; }
+.horizontal-template-row .rec-clip      { overflow: hidden; width: 168px; height: 248px; margin-bottom: 10px; border: 1px solid #eee; }
+.horizontal-template-row .product-price { font-size: 14px; padding-top: 10px; color: #333; }
+.horizontal-template-row .more-colors   { font-size: 10px; padding-bottom: 10px; color: #ff8c37; font-weight: bold; text-transform: uppercase; }
+.horizontal-template-row .mid           { margin: 0px 5px 0px 7px ;}
+.cta-area                               {opacity: 0.7; background: none repeat scroll 0 0 #FFFFFF; position: absolute; z-index: 9999; left: 0; bottom: 0; height: 50px; width: 100%; text-align: center; font-family: arial, sans-serif; font-size: 16px; letter-spacing: .6px; line-height: 1em; }
+.cta-area-banner                        { position: absolute; bottom: 0; right: 0; width: 230px; height: 50px; text-align: center; font-family: arial, sans-serif; font-size: 16px; }
+.cta-area ul, .cta-area-banner ul       { list-style: none; padding: 0; margin: 0; padding-top: 17px; }
+.cta-area li, .cta-area-banner li       { display: inline-block; *zoom: 1; *display: inline; }
+.cta-area li.cta, .cta-area-banner li.cta
+                                        { border-left: 2px solid; padding-left: 10px; margin-left: 10px;  }
+.cta-area li.cta a, .cta-area-banner li.cta a
+                                        { text-decoration: none!important; padding: 10px 0; }
+.cta-area li.cta1, .cta-area-banner li.cta1
+                                        { border-left: 0; padding-left: 0; margin-left: 0; }
+.cf:before, .cf:after                   { content: " "; display: block; }
+.cf:after                               { clear: both; }
+.cf                                     { *zoom: 1; }                                 { *zoom: 1 ; }
+/* ***********Set CTA Text Color************
+   ==================================================
+   ================================================== */
+/* BANNER
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #banner-top .cta-area-banner, #horizontal-template-wrap .horizontal-template-row #banner-top .cta-area-banner a
+                                        { color: #3D8E33;  text-decoration: none;}
+/* HERO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #horizontal-hero .cta-area, #horizontal-template-wrap .horizontal-template-row #horizontal-hero .cta-area a
+                                        {
+	color: #377FAC;
+}
+/* PROMO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .promo .cta-area, #horizontal-template-wrap .horizontal-template-row .promo .cta-area a
+                                        {background: white;
+										opacity: .9;
+											 color: #377FAC; }
+          
+/* FEATURE
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .feature .cta-area, #horizontal-template-wrap .horizontal-template-row .feature .cta-area a
+                                        {background: white;
+										opacity: .9; 
+										color: #377FAC; }
+
+  /* Last Row  
+   ==================================================
+   ================================================== */ 
+ #horizontal-template-wrap .horizontal-template-row .promo .cta-area, #horizontal-template-wrap .horizontal-template-rowlast .promo .cta-area a
+                                        {background: white;
+										opacity: .9; 
+										color: #377FAC; }    
+                                                                 
+/* ***********Set CTA Background Color************
+   ==================================================
+   ================================================== */
+/* BANNER
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #banner-top .cta-area-banner
+                                        { background: white;
+										opacity: .9;
+									 } 
+/* HERO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row #horizontal-hero .cta-area
+                                        {  background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9;} 
+/* PROMO
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .promo .cta-area
+                                        {background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9;}
+
+ #horizontal-template-wrap .horizontal-template-rowlast .promo .cta-area
+                                        { background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9;}                                       
+/* FEATURE
+   ==================================================
+   ================================================== */
+#horizontal-template-wrap .horizontal-template-row .feature .cta-area
+                                        { background: none repeat scroll 0 0 #FFFFFF;
+    color: #2280BD;
+    opacity: 0.9; }
+</style>
+
+ <div id="horizontal-template-wrap"><!-- PAGE START -->
+  <!-- ********************* -->
+  <!--          Hero         -->
+  <!-- ********************* -->
+  <div class="horizontal-template-row cf">
+    <div id="horizontal-hero"> 
+
+        <!-- imagewrap holds all images + we add an inner border --> 
+        
+
+<style>
+
+#HeroBurns {
+	margin:0 auto;
+width: 700px;
+height: 500px;
+} 
+
+</style>
+
+        
+<div id="HeroBurns">
+<img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide1?&$P_CONTENT$"  border="0" />
+	<img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide2?&$P_CONTENT$"  border="0" />
+	<img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide3?&$P_CONTENT$" border="0"/>
+</div>
+
+<script>
+$('#HeroBurns').crossSlide({
+  fade: 2,
+  shuffle: true,
+   variant: true,
+  easing: 'easeInOutQuad'
+}, [
+  {
+    src:  'http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide1?&$P_CONTENT$',
+    from: 'center center',
+    to:   'bottom left',
+    time: 6
+  }, {
+    src:  'http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide2?&$P_CONTENT$',
+    from: 'center center',
+    to:   'top center',
+    time: 6
+  }, {
+    src:  'http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_hero_slide3?&$P_CONTENT$',
+    from: 'center center',
+    to:   'top center',
+    time: 6
+  }
+]);
+</script>
+
+
+    <!-- CTA -->
+      <div class="cta-area"> 
+        <ul>
+          <li>shop:</li>
+          <li class="cta cta1">
+            <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/KateSpade.jsp" manual_cm_re="CH-_-Hero-_-1_043014_BrandProduct_KateSpade_KateSpade" >
+              kate spade
+            </a>
+          </li><li class="cta">
+            <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/VIETRI.jsp" manual_cm_re="CH-_-Hero-_-2_043014_BrandProduct_Vietri_Vietri" >
+             VIETRI
+            </a>
+          </li>  <li class="cta">
+            <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/VeraWang.jsp" manual_cm_re="CH-_-Hero-_-3_043014_BrandProduct_VeraWang_VeraWang" >
+              Vera Wang
+            </a>
+          </li> 
+        </ul>     
+      </div>
+    </div>
+   </div>
+ 
+ <!-- P1, P2 and P3 Wrapper Start -->
+  <div class="horizontal-template-row cf">  
+    <!-- ********************* -->
+    <!--           P1          -->
+    <!-- ********************* -->
+    <div class="promo">
+      <!-- Image -->
+      <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/Waterford.jsp" manual_cm_re="CH-_-P1-_-Image_043014_BrandProduct_WaterfordCrystal_Waterford" ><img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_p1?&$P_CONTENT$" alt="" title="" /></a>
+      <!-- CTA -->
+      <div class="cta-area">
+        <ul>
+          <!-- <li>shop:</li> -->
+          <li class="cta cta1">
+            <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/Waterford.jsp" manual_cm_re="CH-_-P1-_-1_043014_BrandProduct_WaterfordCrystal_Waterford" >
+              shop Waterford
+            </a>
+          </li>
+        </ul>
+      </div>     
+    </div>
+    <!-- ********************* -->
+    <!--           P2          -->
+    <!-- ********************* -->
+    <div class="promo mid">
+      <!-- Image -->
+      <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/ArthurCourt.jsp" manual_cm_re="CH-_-P2-_-Image_043014_BrandProduct_ArthurCourt_ShopArthurCourt" ><img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_p2?&$P_CONTENT$" alt="" title="" /></a>
+      <!-- CTA -->
+      <div class="cta-area">
+        <ul>
+          <!-- <li>shop:</li> -->
+          <li class="cta cta1">
+            <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/ArthurCourt.jsp" manual_cm_re="CH-_-P2-_-1_043014_BrandProduct_ArthurCourt_ShopArthurCourt" >
+             shop Arthur Court
+            </a>
+          </li>
+        </ul>       
+      </div>     
+    </div>
+    <!-- ********************* -->
+    <!--           P3          -->
+    <!-- ********************* -->
+    <div class="promo">
+      <!-- Image -->
+      <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/DartingtonCrystal.jsp" manual_cm_re="CH-_-P3-_-Image_043014_BrandProduct_DartingtonCrystal_ShopDartington" ><img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_p3?&$P_CONTENT$" alt="" title="" /></a>
+      <!-- CTA -->
+      <div class="cta-area">
+        <ul>
+          <!-- <li>shop:</li> -->
+          <li class="cta cta1">
+            <a href="http://www.belk.com/AST/Main/Belk_Primary/For_the_Home/Featured_Shop/CoutureTabletop/DartingtonCrystal.jsp" manual_cm_re="CH-_-P3-_-1_043014_BrandProduct_DartingtonCrystal_ShopDartington" >
+              shop Dartington
+            </a>
+          </li> 
+        </ul>
+      </div>         
+    </div>
+</div> <!-- P1, P2 and P3 Wrapper Start -->
+<!--____________________________________________________________________-->
+<!--                                                                    -->
+<!--                              FEATURES                              -->
+<!--____________________________________________________________________-->
+
+  <!-- Features Wrapper Start --><div class="horizontal-template-row cf">
+    <div class="feature">
+      <a href="http://www.belk.com/AST/Main/Belk_Primary/BedBath/Featured_Shop/DesignerBedding.jsp" manual_cm_re="CH-_-P4-_-Image_043014_Trend_DreamInLuxury_ShopDesignerBedding"><img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_p4?&$P_CONTENT$" alt="" title=""/></a>
+        <div class="cta-area">
+          <ul>
+            <li class="cta cta1">
+              <a href="http://www.belk.com/AST/Main/Belk_Primary/BedBath/Featured_Shop/DesignerBedding.jsp" manual_cm_re="CH-_-P4-_-Image_043014_Trend_DreamInLuxury_ShopDesignerBedding">
+                shop designer bedding
+              </a>
+            </li>
+          </ul>
+        </div>      
+    </div>
+    <div class="feature mid">
+      <a href="http://www.belk.com/bridalregistry/bridal_registry.jsp" manual_cm_re="CH-_-P5-_-Image_043014_Trend_ElegantSettings,WeddingChic_VisitRegistry"><img src="http://s7d4.scene7.com/is/image/Belk/wk14_couturetabletop_p5?&$P_CONTENT$" alt="" title=""/></a>
+        <div class="cta-area">
+          <ul>
+            <li class="cta cta1">
+              <a href="http://www.belk.com/bridalregistry/bridal_registry.jsp" manual_cm_re="CH-_-P5-_-1_043014_Trend_ElegantSettings,WeddingChic_VisitRegistrys">
+                visit registry
+              </a>
+            </li>
+          </ul>
+        </div>      
+    </div>
+  </div>
+  </div>
+
+   

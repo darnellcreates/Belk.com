@@ -1,0 +1,98 @@
+<script type="text/javascript" src="http://www.belk.com/media/javascript/libs/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://www.belk.com/media/javascript/ui/slidedeck.jquery.js"></script>
+ 
+<style>
+
+#expandable-banner-wrap { position: relative; width: 770px; /*height: 590px;*/ }
+
+#expandable-banner-top { width: 770px; height: 90px; }
+
+#slidedeck_frame { position: relative; width: 770px; height:425px; margin:0 auto; }
+
+.slidedeck { height: 425px; width: 770px; padding-bottom: 10px; margin: 0; }
+
+#slidedeck_frame .prev { position: absolute; left: 0px; top:200px; background: url('http://s7d4.scene7.com/is/image/Belk/brandshop_coach_left_arrowA_120712?&$P_CONTENT_PNG$') no-repeat; z-index: 3; height: 101px; width: 30px; cursor: pointer; }
+
+#slidedeck_frame .next { position: absolute; right:0px; top:200px; background: url('http://s7d4.scene7.com/is/image/Belk/brandshop_coach_right_arrowB_120712?&$P_CONTENT_PNG$') no-repeat;  z-index: 3; height: 101px; width: 30px; cursor: pointer; }
+
+#expand-collapse { 
+position:relative; 
+font-size:12px; 
+width: 100%;
+ height: 22px; 
+ padding-top: 8px; 
+ background: #000; 
+ color: #fff; 
+ text-align: center; 
+ text-transform: uppercase; 
+ cursor:pointer; 
+ -moz-transition:all 0.2s ease-in-out 0s;
+  -webkit-transition:all 0.2s ease-in-out 0s; 
+  transition:all 0.2s ease-in-out 0s; 
+  }
+
+#expand-collapse:hover { background: #666; }
+
+#expandable-container { display: none; position: relative; width: 770px; height: 415px; }
+
+</style>
+
+<div id="expandable-banner-wrap">
+
+	<div id="expandable-banner-top">
+			<img src="http://s7d4.scene7.com/is/image/Belk/wk15_lauren_banner_051114?&$P_CONTENT$" alt="Lauren Ralph Lauren"/>
+	</div>
+    
+	<div id="expandable-container">
+		<div id="slidedeck_frame">
+	        <dl class="slidedeck">
+	            <dd><img src="http://s7d4.scene7.com/is/image/Belk/wk15_lauren_slide1_051114?&$P_CONTENT$" alt="The New Nautical" /></dd>
+	            <dd><img src="http://s7d4.scene7.com/is/image/Belk/wk15_lauren_slide2_051114?&$P_CONTENT$" alt="Everyday Ease" /></dd>
+	        </dl>
+	        <div class="prev"></div><!--.prev-->
+	        <div class="next"></div><!--.next-->		    	
+		</div><!--#slidedeck_frame-->
+	</div><!--#expandable-container-->
+	<div id="expand-collapse">Expand &amp; Explore</div>
+</div><!--#expandable-banner-wrap-->
+
+
+<script type ="text/javascript">
+						
+/*******************SLIDEDECK SCRIPT ***********************/
+$(document).ready(function(){
+
+   $('.slidedeck').slidedeck({
+        hideSpines:true,
+        cycle: true
+    });
+
+     var sd = $('.slidedeck').slidedeck();
+    //CHANGE BEGINNING SLIDE HERE
+        sd.goTo(1);
+    //CHANGE BEGINNING SLIDE HERE
+
+    $('#slidedeck_frame .next').click(function(){
+            sd.next();
+    });
+    $('#slidedeck_frame .prev').click(function(e){
+            sd.prev();       
+    }); 
+
+ $('#expand-collapse').click(function(e) {
+   e.preventDefault();
+   if ( $('#expandable-container').css('display') == 'none'  ) {
+     $('#expand-collapse').text('X Close');
+   } else {
+     $('#expand-collapse').html('Expand &rsaquo;');
+     //CHANGE BEGINNING SLIDE HERE
+         sd.goTo(1); 
+     //CHANGE BEGINNING SLIDE HERE     
+   }     
+   $('#expandable-container').slideToggle();       
+ });
+
+});  
+
+</script>
+
